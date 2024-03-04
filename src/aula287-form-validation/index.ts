@@ -9,9 +9,9 @@ const confirm = document.querySelector('#password2') as HTMLInputElement;
 
 const formSchema = z
   .object({
-    username: z.string().min(6, 'username must be minimum 10 character'),
+    username: z.string().min(6, 'username must have minimum 10 character'),
     email: z.string().email('Email invalido'),
-    password: z.string().min(12, 'password must be minimum 12 character '),
+    password: z.string().min(12, 'password must have minimum 12 character '),
     confirm: z.string(),
   })
   .refine((data) => data.confirm === data.password, {
